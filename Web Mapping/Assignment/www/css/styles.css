@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Candara;
+}
+
+p {
+    font-size: 13px;
+    color: #9d9d9d;
+    font-weight: 100;
+}
+
+.col-md-12 {
+    position: absolute;
+}
+
+
+#reachedPopup {
+    background-color: #000;
+    width: 50%;
+    height: 20%;
+    color: #9d9d9d;
+    text-align: center;
+    visibility: hidden;
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#map-container {
+    width: 100%;
+    height: 78%;
+    position: absolute;
+}
+
+#buttons{
+    padding: 0;
+    margin-left: 2px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#info{
+    padding: 0;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#map{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+}
+
+#bottom{
+    width: 100%;
+    height: 22%;
+    bottom: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    border-top: solid;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#arrow{
+    height: 20%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#arrow-canvas{
+    bottom: 0;
+    right: 0;
+    height: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+    font-family: Candara;
+
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+    font-family: Candara;
+
+}
+
+.leaflet-popup-tip-container {
+    font-family: Candara;
+
+}

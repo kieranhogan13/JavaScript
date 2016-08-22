@@ -1,0 +1,95 @@
+<!--
+--- Created by Kieran Hogan - C12561353 on 11/02/2016.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Tell the browser that your page is encoded in utf-8, don't just let it guess-->
+    <meta charset="UTF-8">
+
+    <!--Make your page more mobile-friendly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!--Allow the page to make AJAX calls to non-local resources-->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data:  gap: https://ssl.gstatic.com http://wmap-c12561353.cloudapp.net/
+          http://mf2.dit.ie:8080
+          http://127.0.0.1:63342 http://localhost:63342
+          http://cdn.leafletjs.com http://*.cdn.leafletjs.com
+          https://*.cdn.leafletjs.com https://cdn.leafletjs.com
+          http://*.code.jquery.com http://code.jquery.com
+          https://*.code.jquery.com https://code.jquery.com
+          http://*.cloudfront.net
+          https://*.tile.openstreetmap.org https://*.tile.osm.org
+          http://*.tile.openstreetmap.org http://*.tile.osm.org
+          http://*.maxcdn.bootstrapcdn.com http://maxcdn.bootstrapcdn.com
+          https://*.maxcdn.bootstrapcdn.com https://maxcdn.bootstrapcdn.com
+          'unsafe-eval';
+          style-src 'self' http://cdn.leafletjs.com http://*.cloudfront.net 'unsafe-inline';
+          script-src 'self' http://code.jquery.com http://cdn.leafletjs.com http://*.cloudfront.net 'unsafe-inline';
+          media-src *">
+
+
+    <title>RWM Assignment - Restaurant Map</title>
+
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="css/leaflet.css"/>
+    <link rel="stylesheet" href="css/MarkerCluster.css"/>
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/styles.css"/>
+
+
+        <!-- Javascript files -->
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="js/leaflet.js" type="application/javascript"></script>
+    <script src="js/leaflet.ajax.min.js" type="text/javascript"></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+
+</head>
+<!--
+--- Main map html file
+-->
+<body onload="main()">
+    <div id="map-container">
+        <!-- Map object -->
+        <div id="map">
+        </div>
+        <div id="arrow" style="visibility: hidden;">
+            <canvas id="arrow-canvas" alt="crosshairs" style="visibility: hidden;">
+            </canvas>
+        </div>
+        <!-- Popup for when destination reached -->
+        <div id="reachedPopup">
+            <h4>You have reached your destination!</h4>
+            <button class="btn btn-danger" onclick="closeReachedPopup()">Click here to continue</button>
+        </div>
+
+    </div>
+    <!-- Bottom information area with buttons -->
+    <div id="bottom">
+        <div class="row">
+            <div id="info" class="col-md-12" style="left: 0;">
+                <p><button class="btn btn-primary" id="setDub" onclick='setViewDub()'>Dublin</button>
+                <button class="btn btn-success" id="setLoc" onclick='setViewLoc()'>Your Location</button>
+                <button class="btn btn-warning" id="cancel" onclick='releaseTarget()' style="visibility: hidden;">Cancel Nav</button></p>
+                <p class="destination"><b>Destination: </b></p>
+                <p class="distance"><i>Distance: </i></p>
+                <p class="speed">Speed: </p>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+
+</html>
